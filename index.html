@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Convite</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 40px 20px;
+    }
+
+    h1 {
+      margin-bottom: 60px;
+      font-size: 24px;
+    }
+
+    button {
+      padding: 15px 30px;
+      font-size: 18px;
+      margin: 20px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border-radius: 8px;
+      border: none;
+    }
+
+    #nao {
+      position: absolute;
+    }
+  </style>
+</head>
+<body>
+  <h1>Você vai sair comigo segunda-feira? </h1>
+  <button onclick="respostaSim()">Sim </button>
+  <button id="nao" onmouseover="desvia(this)" ontouchstart="desvia(this)">Não</button>
+
+  <script>
+    function respostaSim() {
+      alert("😎😎😎😎😎");
+    }
+
+    function desvia(btn) {
+      const larguraJanela = window.innerWidth - btn.offsetWidth;
+      const alturaJanela = window.innerHeight - btn.offsetHeight;
+      const novoX = Math.random() * larguraJanela;
+      const novoY = Math.random() * alturaJanela;
+
+      btn.style.left = novoX + "px";
+      btn.style.top = novoY + "px";
+    }
+  </script>
+</body>
+</html>
