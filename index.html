@@ -5,41 +5,81 @@
   <title>Convite</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
     body {
-      font-family: Arial, sans-serif;
-      text-align: center;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%);
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
       margin: 0;
-      padding: 40px 20px;
+      overflow: hidden;
+      text-align: center;
     }
 
     h1 {
-      margin-bottom: 60px;
-      font-size: 24px;
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+      max-width: 90%;
+      animation: fadeInDown 1s ease forwards;
     }
 
     button {
-      padding: 15px 30px;
-      font-size: 18px;
-      margin: 20px;
+      padding: 15px 35px;
+      font-size: 1.2rem;
+      font-weight: 600;
+      border: none;
+      border-radius: 30px;
       cursor: pointer;
       transition: all 0.3s ease;
-      border-radius: 8px;
-      border: none;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+
+    button:hover {
+      transform: scale(1.05);
     }
 
     #nao {
       position: absolute;
+      background-color: #ff6b81;
+      color: white;
+    }
+
+    #sim {
+      background-color: #4cd137;
+      color: white;
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
     }
   </style>
 </head>
 <body>
-  <h1>Você vai sair comigo segunda-feira? </h1>
-  <button onclick="respostaSim()">Sim </button>
-  <button id="nao" onmouseover="desvia(this)" ontouchstart="desvia(this)">Não</button>
+  <h1>Ei... você quer sair comigo na segunda-feira? 😄</h1>
+  <button id="sim" onclick="respostaSim()">Claro que sim!</button>
+  <button id="nao" onmouseover="desvia(this)" ontouchstart="desvia(this)">Nem pensar!</button>
 
   <script>
     function respostaSim() {
-      alert("😎😎😎😎😎");
+      alert("Aí sim! 😎 Vai ser incrível!");
     }
 
     function desvia(btn) {
